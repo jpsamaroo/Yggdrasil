@@ -113,6 +113,7 @@ for platform in platforms
         tarball_path, tarball_hash = build_info[BinaryBuilder.abi_agnostic(platform)][1:2]
         sources = [
             FileSource(tarball_path, tarball_hash),
+            DirectorySource("./bundled"),
         ]
         build_tarballs(ARGS, name, version, sources, script, [platform], products, [])
     end
